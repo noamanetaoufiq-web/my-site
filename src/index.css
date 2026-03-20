@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 220 20% 92%;
+
+    --card: 220 20% 7%;
+    --card-foreground: 220 20% 92%;
+
+    --popover: 220 20% 7%;
+    --popover-foreground: 220 20% 92%;
+
+    --primary: 160 100% 50%;
+    --primary-foreground: 220 20% 4%;
+
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 220 20% 92%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 280 100% 65%;
+    --accent-foreground: 220 20% 92%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 160 100% 50%;
+
+    --radius: 0.75rem;
+
+    --neon-cyan: 180 100% 50%;
+    --neon-green: 160 100% 50%;
+    --neon-purple: 280 100% 65%;
+
+    --gradient-neon: linear-gradient(135deg, hsl(160 100% 50%), hsl(180 100% 50%));
+    --gradient-purple: linear-gradient(135deg, hsl(280 100% 65%), hsl(320 100% 60%));
+    --shadow-neon: 0 0 20px hsl(160 100% 50% / 0.3), 0 0 60px hsl(160 100% 50% / 0.1);
+    --shadow-neon-lg: 0 0 30px hsl(160 100% 50% / 0.4), 0 0 80px hsl(160 100% 50% / 0.15);
+
+    --sidebar-background: 220 20% 6%;
+    --sidebar-foreground: 220 20% 92%;
+    --sidebar-primary: 160 100% 50%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 20% 12%;
+    --sidebar-accent-foreground: 220 20% 92%;
+    --sidebar-border: 220 15% 15%;
+    --sidebar-ring: 160 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .text-gradient-neon {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-purple {
+    background: var(--gradient-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+
+  .glow-neon-lg {
+    box-shadow: var(--shadow-neon-lg);
+  }
+
+  .border-glow {
+    border-color: hsl(var(--primary) / 0.3);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
